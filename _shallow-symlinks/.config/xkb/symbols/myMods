@@ -1,5 +1,6 @@
 //
 // Adding `+myMods` to `xkb_symbols` in `~/.config/xkb/kbmap` file will load this mods.
+// The whole keyboard map can be inspected with `xkbcomp $DISPLAY /tmp/kbmap-dump.xkb`
 //
 xkb_symbols "myMods" {
 

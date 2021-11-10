@@ -8,8 +8,6 @@ Before=sleep.target
 StopWhenUnneeded=yes
 
 [Service]
-# TODO log in as other user and see if templated service is really required, experiment what happens
-#  Can multi-user env (multiple users logged in) override other user's stuff! is @gerard.service triggered by other users?
 User=%I
 Type=oneshot
 RemainAfterExit=yes
@@ -17,7 +15,9 @@ RemainAfterExit=yes
 #  Maybe `echo 'systemctl import-environment DISPLAY' >> /root/.profile` could make it, but probably messing root's
 #  profile doesn't worth it.
 Environment=DISPLAY=:1
+# Save keyboard map
 ExecStart=/usr/bin/xkbcomp $DISPLAY /tmp/xkb-%I.xkb
+# Restore keyboard map
 ExecStop=/bin/sleep 3 ; /usr/bin/xkbcomp /tmp/xkb-%I.xkb $DISPLAY
 
 [Install]
