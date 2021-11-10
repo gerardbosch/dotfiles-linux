@@ -1,0 +1,28 @@
+//
+// Adding `+myMods` to `xkb_symbols` in `~/.config/xkb/kbmap` file will load this mods.
+//
+xkb_symbols "myMods" {
+
+    // Colon
+    key <AC10> {
+        type[group1]= "FOUR_LEVEL",
+        symbols[Group1]= [       colon,           semicolon,       paragraph,          degree ]
+    };
+
+    // Pipe
+    key <BKSL> {
+        type[group1]= "FOUR_LEVEL",
+        symbols[Group1]= [             bar,       backslash,         notsign,       brokenbar ]
+    };
+
+    // Braces
+    key <AD11> {
+        type= "FOUR_LEVEL",
+        symbols[Group1]= [       braceleft,     bracketleft,   guillemotleft, leftdoublequotemark ]
+    };
+    key <AD12> {
+        type= "FOUR_LEVEL",
+        symbols[Group1]= [      braceright,    bracketright,  guillemotright, rightdoublequotemark ]
+    };
+
+};

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Load xkbcomp keyboard map modifications
+Type=Application
+# A delay seems necessary, as not doing so, xkbcomp does not take effect. I suspect because it is
+# overriden by X.org or other stuff loading the key map, so there is a race between them.
+Exec=bash -c 'sleep 3; systemctl --user start xkbcomp'
+Terminal=false
+

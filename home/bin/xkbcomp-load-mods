@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+xkbcomp -w0 -I$HOME/.config/xkb $HOME/.config/xkb/kbmap.xkb $DISPLAY
+

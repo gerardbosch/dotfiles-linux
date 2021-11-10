@@ -1,0 +1,9 @@
+[Unit]
+Description=Load XKB modifications
+
+[Service]
+Type=simple
+ExecStart=%h/bin/xkbcomp-load-mods
+
+[Install]
+WantedBy=default.target
