@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -o errexit   # abort on nonzero exitstatus
+set -o nounset   # abort on unbound variable
+set -o pipefail  # don't hide errors within pipes
+
+SYSTEMD_DIR=/etc/systemd/system
+XKBCOMP_SERVICE_NAME=xkbcomp-sleep-reload
+XKBCOMP_SERVICE_PATH="$(dirname ${0})/etc/systemd/system/${XKBCOMP_SERVICE_NAME}@.service"
+
+# ---
+
+if [ $(id -u) -ne 0 ]; then
+  echo "Elevating permissions via sudo to install files in /etc ..."
+  exec sudo bash "$0" "$@"
+fi
+
+set -x
+install -d "$SYSTEMD_DIR"
+install -m 0644 "$XKBCOMP_SERVICE_PATH" "$SYSTEMD_DIR"
+
+systemctl enable "${XKBCOMP_SERVICE_NAME}@$(logname)" # ${SUDO_USER} could probably work as well, not sure how portable
