@@ -10,8 +10,9 @@ xkb_symbols "myMods" {
         symbols[Group1]= [       colon,           semicolon,       paragraph,          degree ]
     };
 
-    // Pipe
-    key <BKSL> {
+    // Return <-> Pipe / Backslash  (swap them)
+    key <BKSL> {         [          Return ] };
+    key <RTRN> {
         type[group1]= "FOUR_LEVEL",
         symbols[Group1]= [             bar,       backslash,         notsign,       brokenbar ]
     };
