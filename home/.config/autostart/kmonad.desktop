@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Load xkbcomp keyboard map modifications
+Name=Restart KMonad so it loads user PATH
 Type=Application
 Exec=systemctl --user restart kmonad
 Terminal=false
