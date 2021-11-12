@@ -6,6 +6,6 @@ xkb_keymap {
 	xkb_keycodes  { include "evdev+aliases(qwerty)"	};
 	xkb_types     { include "complete"	};
 	xkb_compat    { include "complete"	};
-	xkb_symbols   { include "pc+us(altgr-intl)+es:2+gb:3+inet(evdev)+terminate(ctrl_alt_bksp)+myMods"	};
+	xkb_symbols   { include "pc+us(altgr-intl)+es:2+gb:3+inet(evdev)+compose(menu)+terminate(ctrl_alt_bksp)+myMods"	};
 	xkb_geometry  { include "pc(pc105)"	};
 };
