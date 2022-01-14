@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=Start user notification queue
+Type=Application
+# Note: Using bash -c '...' so this way $HOME is defined
+Exec=bash -c '${HOME}/bin/notification-queue-start-processing'
+Terminal=false
