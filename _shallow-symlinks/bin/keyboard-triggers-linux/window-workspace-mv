@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# Move the focused window to a specified workspace.
+#
+# NOTE: This script is platform specific and it is just used to interface with KMonad config.
+#
 
 dest="$1"
 
@@ -10,5 +15,4 @@ declare -A workspaces=(
   ['l']=4
 )
 
-# Move the focused window to dest workspace
 wmctrl -r :ACTIVE: -t ${workspaces["$dest"]}

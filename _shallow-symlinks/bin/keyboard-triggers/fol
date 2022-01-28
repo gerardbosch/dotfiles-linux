@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-#
-# Focus or Launch applications.
-#
-# This script is platform specific and it is just used to interface with KMonad config.
-#
-
-jumpapp "$@"
-

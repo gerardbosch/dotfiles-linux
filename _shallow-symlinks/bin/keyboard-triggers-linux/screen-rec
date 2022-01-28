@@ -51,4 +51,3 @@ else
     && show_indicator \
     && pingRecInProgress
 fi
-

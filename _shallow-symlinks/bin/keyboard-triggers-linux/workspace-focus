@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#
+# Switch to the specified workspace.
+#
+# NOTE: This script is platform specific and it is just used to interface with KMonad config.
+#
 
 dest="$1"
 
@@ -10,5 +15,5 @@ declare -A workspaces=(
   ['l']=4
 )
 
-# Focus workspace number
 wmctrl -s ${workspaces["$dest"]}
+
