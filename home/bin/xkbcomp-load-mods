@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 
+echo "Loading xkbcomp mods: kbmap.xkb ..."
+echo "HOME=${HOME}"
+echo "DISPLAY=${DISPLAY}"
 xkbcomp -w0 -I$HOME/.config/xkb $HOME/.config/xkb/kbmap.xkb $DISPLAY
 
