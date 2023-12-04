@@ -1,3 +1,6 @@
 [submodule "_submodules/awesome-albert-plugins"]
 	path = _submodules/awesome-albert-plugins
 	url = https://github.com/bergercookie/awesome-albert-plugins.git
+[submodule "_submodules/orchis-dark-ulauncher"]
+	path = _submodules/orchis-dark-ulauncher
+	url = https://github.com/kleber-swf/orchis-dark-ulauncher.git
