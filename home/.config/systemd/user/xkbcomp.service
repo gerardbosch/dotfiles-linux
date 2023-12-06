@@ -1,3 +1,8 @@
+#
+# DEPRECATED in favor of keyd
+#  keyd offers a simpler and flexible key remapping (and more)
+#
+
 [Unit]
 Description=Load XKB modifications
 

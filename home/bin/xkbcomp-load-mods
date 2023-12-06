@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+#
+# DEPRECATED in favor of keyd
+#  keyd offers simpler and flexible key remapping (and more)
+#
 echo "Loading xkbcomp mods: kbmap.xkb ..."
 echo "HOME=${HOME}"
 echo "DISPLAY=${DISPLAY}"
