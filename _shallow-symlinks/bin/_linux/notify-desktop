@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# NOTE: This script is platform specific.
+#
+
+DEFAULT_ICON_PATH=$(readlink -f "$(dirname "$0")/../notify-desktop-img/mono-gnome-info.svg") # convert to absolute path for notify-send
+
+title="$1"
+body="$2"
+iconPath="${3:-$DEFAULT_ICON_PATH}"
+
+# A Linux specific way (libnotify package)
+notify-send "$title" "$body" --icon "$iconPath"
+
