@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+# arg1: target directory. It will search recursively, e.g. ~/repos
+
+find "$1" -type d \
+  $ \  # start group
+  -name "build" \
+  -o -name "target"
+  -o -name "out" \
+  -o -name "bin" \
+  -o -name "dist" \
+  -o -name "release" \
+  -o -name "classes" \
+  -o -name "tmp" \
+  $ \  # end group
+  -exec chattr +C {} \;
+
