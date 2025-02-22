@@ -2,16 +2,37 @@
 
 # arg1: target directory. It will search recursively, e.g. ~/repos
 
-find "$1" -type d \
-  $ \  # start group
-  -name "build" \
-  -o -name "target"
-  -o -name "out" \
-  -o -name "bin" \
-  -o -name "dist" \
-  -o -name "release" \
-  -o -name "classes" \
-  -o -name "tmp" \
-  $ \  # end group
-  -exec chattr +C {} \;
+# Check if at least one argument is provided
+if [ "$#" -lt 1 ]; then
+  echo "Usage: $0 <target directories>"
+  exit 1
+fi
+
+find "$@" -type d \
+  \( \
+    -name "build" \
+    -o -name "target" \
+    -o -name "out" \
+    -o -name "bin" \
+    -o -name "dist" \
+    -o -name "release" \
+    -o -name "classes" \
+    -o -name "tmp" \
+    -o -name "test-outputs" \
+    -o -name "logs" \
+    -o -name "node_modules" \
+    -o -name "vendor" \
+    -o -name "packages" \
+    -o -name "venv" \
+    -o -name "env" \
+    -o -name ".tox" \
+    -o -name "_build" \
+    -o -name ".cache" \
+    -o -name "docker" \
+    -o -name "buildah" \
+  \) \
+  -not -path "*/.git/*" \
+  \
+  -exec chattr +C {} \; \
+  -exec echo {} \; \
 
