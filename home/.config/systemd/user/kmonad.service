@@ -4,6 +4,7 @@ Description=KMonad service
 [Service]
 Type=simple
 ExecStart=%h/.local/bin/kmonad %h/.config/kmonad/mi-keyboard.kbd
+# If PATH is not loaded, try adding: systemctl --user import-environment PATH && kmonad keyboard.kbd
 Restart=always
 RestartSec=3
 KillMode=process
