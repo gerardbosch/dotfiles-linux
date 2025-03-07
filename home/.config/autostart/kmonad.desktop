@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Restart KMonad so it loads user PATH
+Name=Restart kmonad.service so that it loads DISPLAY (PATH is loaded by another service)
 Type=Application
 Exec=systemctl --user restart kmonad
 Terminal=false

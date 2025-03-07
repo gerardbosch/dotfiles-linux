@@ -1,0 +1,17 @@
+[Unit]
+Description=Import user PATH (use as a dependency for other user services)
+
+[Service]
+Type=oneshot
+
+# Setting no (default), the service will be retriggered when dependant services restart.
+# Helps to load DISPLAY in kmonad.service (probably other service imports DISPLAY, but don't know which).
+# Also useful to update/reload PATH.
+RemainAfterExit=no
+
+ExecStart=bash -c 'source %h/.shell/shellrc && systemctl --user import-environment PATH'
+
+# No need to start it, this is pulled as a dependency from other services
+#[Install]
+#WantedBy=default.target
+
