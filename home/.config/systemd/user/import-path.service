@@ -1,3 +1,8 @@
+# 
+# EDIT 2025-05-15: This is useless now as it does not work in Manjaro. Was
+#  working on Ubuntu, but better to use a compatible way, using
+#  `EnvironmentFile` that is generated/updated by the shell path scripts.
+#
 [Unit]
 Description=Import user PATH (use as a dependency for other user services)
 
