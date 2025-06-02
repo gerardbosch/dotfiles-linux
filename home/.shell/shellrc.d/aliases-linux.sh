@@ -9,3 +9,6 @@ alias record-audio-out-bluetooth='ffmpeg -f pulse -ac 2 -ar 48000 -i bluez_outpu
 
 alias f='nautilus . &disown' # file explorer
 
+# Arch
+alias pacman-orphan-remove="sudo pacman -Rns $(pacman -Qdtq) || echo 'No orphans to remove!'"
+
