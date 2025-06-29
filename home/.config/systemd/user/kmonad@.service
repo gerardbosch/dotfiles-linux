@@ -1,0 +1,19 @@
+[Unit]
+Description=KMonad service for keyboard: %i
+After=graphical-session.target
+
+[Service]
+Type=simple
+#Environment="PATH=/home/gerard/bin/keyboard-triggers:..."
+# ExecStartPre will write the user.path file via shellrc scripts...
+ExecStartPre=/bin/bash -c 'source %h/.shell/shellrc'
+# ...then import the path from the file (see ~/.shell/shellrc/NN-path.sh for details)
+EnvironmentFile=/run/user/%U/user.path
+ExecStart=%h/.nix-profile/bin/kmonad %h/.config/kmonad/%i
+Restart=always
+RestartSec=3
+KillMode=process
+
+[Install]
+WantedBy=default.target
+
